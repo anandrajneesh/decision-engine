@@ -1,0 +1,55 @@
+{
+  "name": "express",
+  "group": "shipping",
+  "comment": "Express shipping available to prime users in available cities or if user has checked out express delivery with no cash on delivery, order should contain atmost 5 items with price of 5000",
+  "conditions": {
+    "and": {
+      "5ItemsPrice5000": {
+        "and": [
+          {
+            "key": "order.items.length",
+            "value": 5,
+            "comparator": "lte"
+          },
+          {
+            "key": "order.price",
+            "value": 5000,
+            "comparator": "gte"
+          }
+        ]
+      },
+      "primeEnabledOrExpressAvailed": {
+        "or": {
+          "primeEnabled":{
+            "and":[
+              {
+                "key":"user.subs.prime",
+                "value":true,
+                "comparator":"is"
+              },
+              {
+                "key":"user.address.express.available",
+                "value":true,
+                "comparator":"is"
+              }
+            ]
+          },
+          "expressAvailed":{
+            "and":[
+              {
+                "key":"order.express",
+                "value":true,
+                "comparator":"is"
+              },
+              {
+                "key":"order.cashOnDelivery",
+                "value":false,
+                "comparator":"is"
+              }
+            ]
+          }
+        }
+      }
+    }
+  }
+}

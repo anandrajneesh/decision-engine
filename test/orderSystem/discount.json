@@ -1,0 +1,32 @@
+{
+  "name": "10",
+  "group": "discount",
+  "comment": "10% discount applied to order of more than 10 items with minimum total price of 500 or total order amount of 2000",
+  "conditions": {
+    "or": {
+      "moreThan2ItemsPrice500OrMore": {
+        "and": [
+          {
+            "key": "order.items.length",
+            "value": 2,
+            "comparator": "gte"
+          },
+          {
+            "key": "order.price",
+            "value": 500,
+            "comparator": "gte"
+          }
+        ]
+      },
+      "priceGreaterThan2000": {
+        "and": [
+          {
+            "key": "order.price",
+            "value": 2000,
+            "comparator": "gte"
+          }
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "user": {
+    "name" :"sikorski",
+    "address" : {
+      "state":{
+        "name":"Earth"
+      },
+      "express":{
+        "duration":1,
+        "available":true
+      }
+    },
+    "subs":{
+      "prime":true
+    }
+  },
+  "order": {
+    "items": [],
+    "price": 0,
+    "express": false,
+    "cashOnDelivery": true
+  }
+}
