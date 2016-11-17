@@ -1,6 +1,6 @@
 {
   "name": "decision-engine",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "Rule Engine",
   "main": "index.js",
   "standard": {
