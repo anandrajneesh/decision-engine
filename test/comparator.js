@@ -13,5 +13,9 @@ describe('comparator', function () {
     it('should return false for different objects', function () {
       assert.ok(!comparator.is(false, true))
     })
+
+    it('should return false for one undefined and other values object', function () {
+      assert.ok(!comparator.is(undefined, 'value'))
+    })
   })
 })

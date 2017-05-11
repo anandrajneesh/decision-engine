@@ -107,7 +107,7 @@
        })
      })
 
-     it('should not allow shipping for non prime and non express orders', function (done) {
+     it('should not allow express shipping for non prime and non express orders', function (done) {
        fact.user.subs.prime = false
        fact.user.address.express.available = false
        fact.order.cashOnDelivery = false
@@ -120,5 +120,20 @@
          }
        })
      })
+
+     it('should not allow express shipping for facts which have missing data', function (done) {
+       delete fact.user.subs.prime
+       fact.user.address.express.available = false
+       fact.order.cashOnDelivery = false
+       delete fact.order.express
+       ruleEngine.run(fact, 'shipping', function (err, result) {
+         if (err) done(err)
+         else {
+           assert.ok(result.length === 0)
+           done()
+         }
+       })
+     })
    })
  })
+
