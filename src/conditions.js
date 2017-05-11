@@ -9,7 +9,7 @@
    function evaluateExpr (obj, operation) {
      var keys = operation.key.split('.')
      var a = keys.length > 1 ? keys.reduce(function (prev, curr) {
-       return prev[curr]
+       return typeof prev !== 'undefined'? prev[curr] : undefined
      }, obj) : obj[keys[0]]
      return comparators[operation.comparator](a, operation.value)
    }
