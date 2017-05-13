@@ -2,7 +2,7 @@
  * Created by anandrajneesh
  */
  'use strict'
- const ruleEngine = require('../src/index.js')()
+ const ruleEngine = require('../src/index.js')
  const assert = require('assert')
 
  describe('order system rule engine', function () {
@@ -33,7 +33,9 @@
          if (err) done(err)
          else {
            assert.ok(result.indexOf('10') > -1)
-           done()
+           setTimeout(() => {
+             done()
+           }, 1800)
          }
        })
      })

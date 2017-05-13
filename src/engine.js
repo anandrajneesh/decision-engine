@@ -47,8 +47,8 @@ module.exports = function RuleEngine () {
             _rules[group],
             function (rule, cb) {
               rule.parsedCondition.evaluate(fact, function (err, result) {
-                if (result) cb(undefined, rule.name)
                 if (err) console.log(err)
+                if (result) cb(undefined, rule.name)
                 else cb()
               })
             },
