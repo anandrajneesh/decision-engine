@@ -33,7 +33,9 @@
          if (err) done(err)
          else {
            assert.ok(result.indexOf('10') > -1)
-           done()
+           setTimeout(() => {
+             done()
+           }, 1800)
          }
        })
      })
