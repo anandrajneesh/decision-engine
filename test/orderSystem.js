@@ -2,7 +2,7 @@
  * Created by anandrajneesh
  */
  'use strict'
- const ruleEngine = require('../src/index.js')()
+ const ruleEngine = require('../src/index.js')
  const assert = require('assert')
 
  describe('order system rule engine', function () {
