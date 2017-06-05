@@ -185,6 +185,9 @@ In the above example there are two composite units `5ItemsPrice5000` and `priceG
 ##### divisible (a, that)
       returns true if a % that === 0
 
+##### regex (a, that)
+      returns true if new RegExp(that).test(a) === true
+
 ## API Usage
 ```js
 const decisionEngine = require('decision-engine')
