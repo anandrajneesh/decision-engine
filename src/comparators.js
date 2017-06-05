@@ -25,6 +25,9 @@ module.exports = function () {
     },
     divisible: function (a, that) {
       return a % that === 0
+    },
+    regex: function (a, that) {
+      return new RegExp(that).test(a)
     }
 
   }
