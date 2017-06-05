@@ -26,6 +26,15 @@
             "comparator": "gte"
           }
         ]
+      },
+      "specialDiscountForNamesStartingWithA":{
+        "and":[
+          {
+            "key": "user.name",
+            "value": "^A",
+            "comparator": "regex"
+          }
+        ]
       }
     }
   }

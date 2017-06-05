@@ -63,6 +63,17 @@
          }
        })
      })
+
+     it('should return 10% discount for users with name starting with A', function (done) {
+       fact.user.name = 'Adam'
+       ruleEngine.run(fact, 'discount', function (err, result) {
+         if (err) done(err)
+         else {
+           assert.ok(result.indexOf('10') > -1)
+           done()
+         }
+       })
+     })
    })
 
    describe('should work for complex rules like expressShipping.json', function () {
